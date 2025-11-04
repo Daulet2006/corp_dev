@@ -1,20 +1,26 @@
-// Fixed MyProducts.tsx — extract data from wrapped APIResponse
 "use client"
 
 import { useState, useEffect } from "react"
 import { CustomerNav } from "@/components/layout/CustomerNav"
 import { ItemCard } from "@/components/ItemCard"
 import { useLanguageStore } from "@/stores/languageStore"
+import { useAuthStore } from "@/stores/authStore"  // Added missing import
+import { useNavigate } from "react-router-dom"  // Для redirect если !auth
 import type { Product } from "@/types/types.ts"
 import api from "@/utils/api"
 import toast from "react-hot-toast"
 
 export function MyProducts() {
+    const navigate = useNavigate()
     const { t } = useLanguageStore()
     const [products, setProducts] = useState<Product[]>([])
     const [loading, setLoading] = useState(true)
 
     useEffect(() => {
+        if (!useAuthStore.getState().isAuth) {
+            navigate("/login")
+            return
+        }
         fetchMyProducts()
     }, [])
 
@@ -22,15 +28,15 @@ export function MyProducts() {
         try {
             const response = await api.get("/my/products")
             // Fixed: Extract from wrapped {success, data} response
-            const apiData = response.data as { success: boolean; data: Product[] }
+            const apiData = response.data as { success: boolean; data: Product[]; message?: string }
             if (apiData.success && Array.isArray(apiData.data)) {
                 setProducts(apiData.data)
             } else {
-                throw new Error("Invalid response format")
+                throw new Error(apiData.message || "Invalid response format")
             }
         } catch (error: any) {
             console.error("Fetch my products error:", error)
-            toast.error(error.response?.data?.message || error.response?.data?.error || "Failed to load your products")
+            toast.error(error.response?.data?.message || "Failed to load your products")
             setProducts([])
         } finally {
             setLoading(false)
@@ -41,11 +47,15 @@ export function MyProducts() {
         if (!confirm("Are you sure you want to delete this product?")) return
 
         try {
-            await api.delete(`/products/${productId}`)
-            toast.success("Product deleted successfully")
-            fetchMyProducts()
+            const response = await api.delete(`/products/${productId}`)
+            if (response.data.success) {
+                toast.success("Product deleted successfully")
+                fetchMyProducts()
+            } else {
+                throw new Error(response.data.message)
+            }
         } catch (error: any) {
-            toast.error(error.response?.data?.error || "Delete failed")
+            toast.error(error.response?.data?.message || "Delete failed")
         }
     }
 

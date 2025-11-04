@@ -1,3 +1,4 @@
+// src/pages/AdminUsers.tsx
 "use client"
 
 import { useState, useEffect } from "react"
@@ -12,9 +13,11 @@ import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import * as z from "zod"
 import type { User } from "@/types/types.ts"
+import type { ApiResponse } from "@/types/types.ts"
 import api from "@/utils/api"
 import toast from "react-hot-toast"
 import { AdminNav } from "@/components/layout/AdminNav"
+import { useAuthStore } from "@/stores/authStore"
 
 const userSchema = z.object({
     firstName: z.string().min(1, "First name is required"),
@@ -31,6 +34,7 @@ type UserFormData = z.infer<typeof userSchema>
 type RoleFormData = z.infer<typeof roleSchema>
 
 export function AdminUsers() {
+    const { user: currentUser } = useAuthStore() // FIXED: Get current user to prevent self-block
     const [users, setUsers] = useState<User[]>([])
     const [loading, setLoading] = useState(true)
     const [editingId, setEditingId] = useState<number | null>(null)
@@ -45,8 +49,8 @@ export function AdminUsers() {
     const fetchUsers = async () => {
         try {
             setLoading(true)
-            const response = await api.get("/admin/users")
-            setUsers(response.data)
+            const response = await api.get<ApiResponse<User[]>>("/admin/users")
+            setUsers(response.data.data || [])
         } catch (error) {
             toast.error("Failed to load users")
         } finally {
@@ -102,7 +106,7 @@ export function AdminUsers() {
     const handleSubmitUser = async (data: UserFormData) => {
         try {
             if (editingId) {
-                await api.put(`/admin/users/${editingId}`, data)
+                await api.put<ApiResponse<User>>(`/admin/users/${editingId}`, data)
                 toast.success("User updated successfully")
             }
             fetchUsers()
@@ -115,7 +119,7 @@ export function AdminUsers() {
     const handleSubmitRole = async (data: RoleFormData) => {
         try {
             if (changingRoleId) {
-                await api.put(`/admin/users/${changingRoleId}/role`, data)
+                await api.put<ApiResponse<User>>(`/admin/users/${changingRoleId}/role`, data)
                 toast.success("Role changed successfully")
             }
             fetchUsers()
@@ -126,9 +130,15 @@ export function AdminUsers() {
     }
 
     const handleToggleBlock = async (user: User) => {
+        // FIXED: Prevent self-block
+        if (user.id === currentUser?.id) {
+            toast.error("Cannot block or unblock yourself")
+            return
+        }
+
         try {
             const endpoint = user.blocked ? "unblock" : "block"
-            await api.post(`/admin/users/${user.id}/${endpoint}`)
+            await api.post<ApiResponse<User>>(`/admin/users/${user.id}/${endpoint}`)
             toast.success(`User ${user.blocked ? "unblocked" : "blocked"} successfully`)
             fetchUsers()
         } catch (error: any) {
@@ -283,6 +293,7 @@ export function AdminUsers() {
                                             variant={user.blocked ? "default" : "outline"}
                                             size="sm"
                                             onClick={() => handleToggleBlock(user)}
+                                            disabled={user.id === currentUser?.id} // FIXED: Disable for self
                                         >
                                             {user.blocked ? "Unblock" : "Block"}
                                         </Button>

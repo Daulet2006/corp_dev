@@ -1,4 +1,4 @@
-// src/pages/ManagerInventory.tsx
+// src/pages/ManagerInventory.tsx (modified: unified nav, no sidebar, full-width content, adjusted loading)
 "use client"
 
 import { useState, useEffect } from "react"
@@ -19,7 +19,7 @@ import type { Pet, Product } from "@/types/types.ts"
 import type { ApiResponse } from "@/types/types.ts"
 import api from "@/utils/api"
 import toast from "react-hot-toast"
-import {ManagerNav} from "@/components/layout/ManagerNav.tsx";
+import { AppNav } from "@/components/AppNav.tsx";  // Unified nav
 
 const petSchema = z.object({
     name: z.string().min(1, "Name is required"),
@@ -231,9 +231,9 @@ export function ManagerInventory() {
 
     if (loading) {
         return (
-            <div className="flex h-screen">
-                <ManagerNav />
-                <div className="flex flex-1 items-center justify-center">
+            <div className="min-h-screen bg-background">
+                <AppNav />
+                <div className="flex h-[70vh] items-center justify-center">
                     <div className="animate-spin rounded-full border-2 border-primary h-8 w-8" />
                 </div>
             </div>
@@ -241,9 +241,9 @@ export function ManagerInventory() {
     }
 
     return (
-        <div className="flex h-screen">
-            <ManagerNav />
-            <main className="flex-1 overflow-y-auto bg-background">
+        <div className="min-h-screen bg-background">
+            <AppNav />
+            <main className="overflow-y-auto">
                 <div className="p-8">
                     <div className="mb-6 flex items-center justify-between">
                         <h1 className="text-3xl font-bold">Inventory Management</h1>

@@ -1,4 +1,4 @@
-// src/App.tsx
+// src/App.tsx (modified: unified nav import paths assumed as AppNav, added HomeWrapper for redirects, restricted store/my to user role)
 "use client"
 
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom"
@@ -42,6 +42,33 @@ function ProtectedRoute({ children, requiredRole }: { children: React.ReactNode;
     return <>{children}</>
 }
 
+// Wrapper for Home route with role-based redirects
+function HomeWrapper() {
+    const { isLoading, isAuth, user } = useAuthStore()
+
+    if (isLoading) {
+        return (
+            <div className="flex items-center justify-center min-h-screen">
+                <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div>
+            </div>
+        )
+    }
+
+    if (isAuth) {
+        if (user?.role === "admin") {
+            return <Navigate to="/admin" replace />
+        }
+        if (user?.role === "manager") {
+            return <Navigate to="/manager" replace />
+        }
+        // For user, show Home
+        return <Home />
+    }
+
+    // Not auth, show Home
+    return <Home />
+}
+
 function App() {
     const { setTheme } = useThemeStore()
     const { setLanguage } = useLanguageStore()
@@ -68,72 +95,86 @@ function App() {
 
 
     return (
-            <BrowserRouter>
-                <Toaster position="top-right" />
-                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/login" element={<Login />} />
-                    <Route path="/register" element={<Register />} />
-                    <Route path="/store/pets" element={<StorePets />} />
-                    <Route path="/store/products" element={<StoreProducts />} />
-                    <Route
-                        path="/my/pets"
-                        element={
-                            <ProtectedRoute>
-                                <MyPets />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/manager/inventory"
-                        element={
-                            <ProtectedRoute requiredRole="manager">
-                                <ManagerInventory />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/my/products"
-                        element={
-                            <ProtectedRoute>
-                                <MyProducts />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/profile"
-                        element={
-                            <ProtectedRoute>
-                                <Profile />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/admin"
-                        element={
-                            <ProtectedRoute requiredRole="admin">
-                                <AdminDashboard />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/admin/users"
-                        element={
-                            <ProtectedRoute requiredRole="admin">
-                                <AdminUsers />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/manager"
-                        element={
-                            <ProtectedRoute requiredRole="manager">
-                                <ManagerDashboard />
-                            </ProtectedRoute>
-                        }
-                    />
-                </Routes>
-            </BrowserRouter>
+        <BrowserRouter>
+            <Toaster position="top-right" />
+            <Routes>
+                <Route path="/" element={<HomeWrapper />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route
+                    path="/store/pets"
+                    element={
+                        <ProtectedRoute requiredRole="user">
+                            <StorePets />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/store/products"
+                    element={
+                        <ProtectedRoute requiredRole="user">
+                            <StoreProducts />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/my/pets"
+                    element={
+                        <ProtectedRoute requiredRole="user">
+                            <MyPets />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/manager/inventory"
+                    element={
+                        <ProtectedRoute requiredRole="manager">
+                            <ManagerInventory />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/my/products"
+                    element={
+                        <ProtectedRoute requiredRole="user">
+                            <MyProducts />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/profile"
+                    element={
+                        <ProtectedRoute>
+                            <Profile />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/admin"
+                    element={
+                        <ProtectedRoute requiredRole="admin">
+                            <AdminDashboard />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/admin/users"
+                    element={
+                        <ProtectedRoute requiredRole="admin">
+                            <AdminUsers />
+                        </ProtectedRoute>
+                    }
+                />
+                <Route
+                    path="/manager"
+                    element={
+                        <ProtectedRoute requiredRole="manager">
+                            <ManagerDashboard />
+                        </ProtectedRoute>
+                    }
+                />
+            </Routes>
+        </BrowserRouter>
     )
 }
 

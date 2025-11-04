@@ -1,8 +1,8 @@
-// src/pages/ManagerDashboard.tsx
+// src/pages/ManagerDashboard.tsx (modified: unified nav, no sidebar, full-width content, adjusted loading)
 "use client"
 
 import { useState, useEffect } from "react"
-import { ManagerNav } from "@/components/layout/ManagerNav"
+import { AppNav } from "@/components/AppNav.tsx"  // Unified nav
 import { Card, CardContent } from "@/components/ui/Card"
 import { useLanguageStore } from "@/stores/languageStore"
 import type { Stats } from "@/types/types.ts"
@@ -33,9 +33,9 @@ export function ManagerDashboard() {
 
     if (loading) {
         return (
-            <div className="flex h-screen">
-                <ManagerNav />
-                <div className="flex flex-1 items-center justify-center">
+            <div className="min-h-screen bg-background">
+                <AppNav />
+                <div className="flex h-[70vh] items-center justify-center">
                     <p className="text-muted-foreground">{t("common.loading")}</p>
                 </div>
             </div>
@@ -43,9 +43,9 @@ export function ManagerDashboard() {
     }
 
     return (
-        <div className="flex h-screen">
-            <ManagerNav />
-            <main className="flex-1 overflow-y-auto bg-background">
+        <div className="min-h-screen bg-background">
+            <AppNav />
+            <main className="overflow-y-auto">
                 <div className="p-8">
                     <div className="mb-8">
                         <h1 className="text-3xl font-bold text-foreground">{t("manager.dashboard")}</h1>

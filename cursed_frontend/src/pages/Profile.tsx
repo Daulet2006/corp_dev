@@ -1,7 +1,7 @@
 // Fixed Profile.tsx — use isAuth for check, remove redundant useEffect navigate (ProtectedRoute handles it)
 "use client"
 
-import { CustomerNav } from "@/components/layout/CustomerNav"
+import { AppNav } from "@/components/AppNav.tsx"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/Card"
 import { useAuthStore } from "@/stores/authStore"
 import { useLanguageStore } from "@/stores/languageStore"
@@ -15,7 +15,7 @@ export function Profile() {
 
     return (
         <div className="min-h-screen bg-background">
-            <CustomerNav />
+            <AppNav />
             <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
                 <Card>
                     <CardHeader>

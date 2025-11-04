@@ -2,7 +2,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
-import { CustomerNav } from "@/components/layout/CustomerNav"
+import { AppNav } from "@/components/AppNav.tsx"
 import { ItemCard } from "@/components/ItemCard"
 import { useLanguageStore } from "@/stores/languageStore"
 import { useAuthStore } from "@/stores/authStore"
@@ -65,7 +65,7 @@ export function StorePets() {
     if (loading) {
         return (
             <div className="min-h-screen bg-background">
-                <CustomerNav />
+                <AppNav />
                 <div className="flex h-96 items-center justify-center">
                     <p className="text-muted-foreground">{t("common.loading")}</p>
                 </div>
@@ -75,7 +75,7 @@ export function StorePets() {
 
     return (
         <div className="min-h-screen bg-background">
-            <CustomerNav />
+            <AppNav />
             <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
                 <div className="mb-8">
                     <h1 className="text-3xl font-bold text-foreground">{t("store.pets")}</h1>

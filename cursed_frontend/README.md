@@ -90,7 +90,7 @@ The application expects a backend API running at `http://localhost:8080/api` wit
 src/
 ├── components/
 │   ├── layout/
-│   │   ├── CustomerNav.tsx
+│   │   ├── AppNav.tsx
 │   │   ├── ManagerNav.tsx
 │   │   └── AdminNav.tsx
 │   ├── ui/

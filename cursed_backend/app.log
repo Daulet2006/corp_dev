@@ -5325,3 +5325,247 @@
 {"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:26:00"}
 {"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:26:00","user_id":0}
 {"ip":"::1","latency":"6.9177ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:26:01","user_id":0}
+{"ip":"::1","latency":"54.2401ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:36:03","user_id":0}
+{"ip":"::1","latency":"5.2094ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:36:03","user_id":0}
+{"ip":"::1","latency":"3.7353ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:36:20","user_id":0}
+{"ip":"::1","latency":"4.9669ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/admin/users","size":695,"status":200,"timestamp":"2025-11-04 15:37:45","user_id":0}
+{"ip":"::1","latency":"1.3525ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/admin/users","size":695,"status":200,"timestamp":"2025-11-04 15:37:45","user_id":0}
+{"ip":"::1","latency":"5.0354ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:37:47","user_id":0}
+{"ip":"::1","latency":"5.951ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:37:47","user_id":0}
+{"action":"login","ip":"::1","level":"info","msg":"Audit success","timestamp":"2025-11-04 15:37:53","type":"audit","user_id":3}
+{"ip":"::1","latency":"1.0804616s","level":"info","method":"POST","msg":"HTTP request","path":"/api/login","size":411,"status":200,"timestamp":"2025-11-04 15:37:53","user_id":0}
+{"level":"info","msg":"CSRF token generated and cookie set","timestamp":"2025-11-04 15:37:53","user_id":0}
+{"ip":"::1","latency":"0s","level":"info","method":"GET","msg":"HTTP request","path":"/api/csrf-token","size":61,"status":200,"timestamp":"2025-11-04 15:37:53","user_id":0}
+{"ip":"::1","latency":"8.9929ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:37:53","user_id":0}
+{"ip":"::1","latency":"6.9573ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:37:53","user_id":0}
+{"ip":"::1","latency":"4.5831ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/pets","size":930,"status":200,"timestamp":"2025-11-04 15:37:54","user_id":0}
+{"ip":"::1","latency":"1.8295ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/products","size":3747,"status":200,"timestamp":"2025-11-04 15:37:54","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:54"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:54","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:54"}
+{"ip":"::1","latency":"610.2µs","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:54","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:37:55"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:37:55","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:37:55"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:37:55","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:55"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:55","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:55"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:55","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:56"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:56","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:56"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:56","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:56"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:56","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:56"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:56","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:37:56"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:37:56","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:37:56"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:37:56","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:56"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:56","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:56"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:56","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:57"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:57","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:57"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:57","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:57"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:57","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:57"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:57","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:37:57"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:37:57","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:37:57"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:37:57","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:57"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:57","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:57"}
+{"ip":"::1","latency":"785.9µs","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:57","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:58"}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:58"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:58","user_id":0}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:58","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:58"}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:58"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:58","user_id":0}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:58","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:37:58"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:37:58","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:37:58"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:37:58","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:58"}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:58"}
+{"ip":"::1","latency":"706.8µs","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:58","user_id":0}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:58","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:59"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:59","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:59"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:59","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:59"}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:59"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:59","user_id":0}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:59","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:37:59"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:37:59","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:37:59"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:37:59","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:37:59"}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:37:59"}
+{"ip":"::1","latency":"1.0089ms","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:37:59","user_id":0}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:37:59","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:00"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:00","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:00"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:00","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:00"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:00","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:00"}
+{"ip":"::1","latency":"534µs","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:00","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:38:00"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:38:00","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:38:00"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:38:00","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:00"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:00","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:00"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:00","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:01"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:01","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:01"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:01","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:01"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:01","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:01"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:01","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:01"}
+{"ip":"::1","latency":"536.6µs","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:01","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:01"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:01","user_id":0}
+{"ip":"::1","latency":"7.4585ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:38:01","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:38:01"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:38:01","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:02"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:02","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:02"}
+{"ip":"::1","latency":"505.9µs","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:02","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:02"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:02","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:02"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:02","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:02"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:02","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:02"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:02","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:38:02"}
+{"ip":"::1","latency":"2.7828ms","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:38:02","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:03"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:03","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:03"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:03","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:03"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:03","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:03"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:03","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:03"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:03","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:03"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:03","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:38:03"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:38:03","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:04"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:04","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:04"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:04","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:04"}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:04"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:04","user_id":0}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:04","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:04"}
+{"ip":"::1","latency":"703.5µs","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:04","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:04"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:04","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:38:04"}
+{"ip":"::1","latency":"506.9µs","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:38:04","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:05"}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:05"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:05","user_id":0}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:05","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:05"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:05","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:05"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:05","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:05"}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:05"}
+{"ip":"::1","latency":"4.1054ms","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:05","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:38:05"}
+{"ip":"::1","latency":"4.1054ms","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:05","user_id":0}
+{"ip":"::1","latency":"3.5568ms","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:38:05","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:06"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:06","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:06"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:06","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:06"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:06","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:06"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:06","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:07"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:07","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:07"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:07","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/stats","timestamp":"2025-11-04 15:38:07"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/stats","size":31,"status":429,"timestamp":"2025-11-04 15:38:07","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:08"}
+{"ip":"::1","latency":"513.4µs","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:08","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:08"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:08","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/products","timestamp":"2025-11-04 15:38:08"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/products","size":31,"status":429,"timestamp":"2025-11-04 15:38:08","user_id":0}
+{"ip":"::1","level":"warning","msg":"Rate limit exceeded","path":"/api/pets","timestamp":"2025-11-04 15:38:08"}
+{"ip":"::1","latency":"0s","level":"warning","method":"GET","msg":"HTTP request warning","path":"/api/pets","size":31,"status":429,"timestamp":"2025-11-04 15:38:08","user_id":0}
+{"level":"info","msg":"Shutting down server...","timestamp":"2025-11-04 15:38:08"}
+{"level":"info","msg":"Server exited cleanly","timestamp":"2025-11-04 15:38:08"}
+{"fields.level":"info","level":"info","msg":"Logger initialized","timestamp":"2025-11-04 15:38:13"}
+{"config":"dev","level":"info","msg":"App starting","timestamp":"2025-11-04 15:38:13"}
+{"level":"info","msg":"✅ Router setup complete","timestamp":"2025-11-04 15:38:13"}
+{"ip":"::1","latency":"2.2895ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/pets","size":930,"status":200,"timestamp":"2025-11-04 15:38:13","user_id":0}
+{"ip":"::1","latency":"1.3244ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/products","size":3747,"status":200,"timestamp":"2025-11-04 15:38:13","user_id":0}
+{"ip":"::1","latency":"48.8971ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/pets","size":930,"status":200,"timestamp":"2025-11-04 15:38:13","user_id":0}
+{"ip":"127.0.0.1","latency":"1.645ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/products","size":3747,"status":200,"timestamp":"2025-11-04 15:38:18","user_id":0}
+{"ip":"::1","latency":"6.0408ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/pets","size":930,"status":200,"timestamp":"2025-11-04 15:38:18","user_id":0}
+{"action":"login","ip":"::1","level":"info","msg":"Audit success","timestamp":"2025-11-04 15:38:24","type":"audit","user_id":2}
+{"ip":"::1","latency":"1.0623989s","level":"info","method":"POST","msg":"HTTP request","path":"/api/login","size":404,"status":200,"timestamp":"2025-11-04 15:38:24","user_id":0}
+{"level":"info","msg":"CSRF token generated and cookie set","timestamp":"2025-11-04 15:38:24","user_id":0}
+{"ip":"::1","latency":"0s","level":"info","method":"GET","msg":"HTTP request","path":"/api/csrf-token","size":61,"status":200,"timestamp":"2025-11-04 15:38:24","user_id":0}
+{"ip":"::1","latency":"1.6749ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/pets","size":930,"status":200,"timestamp":"2025-11-04 15:38:24","user_id":0}
+{"ip":"127.0.0.1","latency":"1.0665ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/products","size":3747,"status":200,"timestamp":"2025-11-04 15:38:24","user_id":0}
+{"ip":"::1","latency":"2.2729ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/pets","size":930,"status":200,"timestamp":"2025-11-04 15:38:24","user_id":0}
+{"ip":"::1","latency":"529.6µs","level":"info","method":"GET","msg":"HTTP request","path":"/api/products","size":3747,"status":200,"timestamp":"2025-11-04 15:38:24","user_id":0}
+{"ip":"::1","latency":"1.9208ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/pets","size":930,"status":200,"timestamp":"2025-11-04 15:40:48","user_id":0}
+{"ip":"::1","latency":"548.7µs","level":"info","method":"GET","msg":"HTTP request","path":"/api/products","size":3747,"status":200,"timestamp":"2025-11-04 15:40:48","user_id":0}
+{"ip":"::1","latency":"2.7132ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/pets","size":930,"status":200,"timestamp":"2025-11-04 15:40:49","user_id":0}
+{"ip":"::1","latency":"1.0768ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/products","size":3747,"status":200,"timestamp":"2025-11-04 15:40:49","user_id":0}
+{"ip":"::1","latency":"1.0427ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/products","size":3747,"status":200,"timestamp":"2025-11-04 15:40:49","user_id":0}
+{"ip":"::1","latency":"2.6427ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/pets","size":930,"status":200,"timestamp":"2025-11-04 15:40:49","user_id":0}
+{"action":"login","ip":"::1","level":"info","msg":"Audit success","timestamp":"2025-11-04 15:40:56","type":"audit","user_id":1}
+{"ip":"::1","latency":"1.0448938s","level":"info","method":"POST","msg":"HTTP request","path":"/api/login","size":409,"status":200,"timestamp":"2025-11-04 15:40:56","user_id":0}
+{"level":"info","msg":"CSRF token generated and cookie set","timestamp":"2025-11-04 15:40:56","user_id":0}
+{"ip":"::1","latency":"0s","level":"info","method":"GET","msg":"HTTP request","path":"/api/csrf-token","size":61,"status":200,"timestamp":"2025-11-04 15:40:56","user_id":0}
+{"ip":"::1","latency":"12.865ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:40:56","user_id":0}
+{"ip":"::1","latency":"8.8126ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:40:56","user_id":0}
+{"ip":"::1","latency":"6.9506ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:41:44","user_id":0}
+{"ip":"::1","latency":"4.9347ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:41:44","user_id":0}
+{"ip":"::1","latency":"6.3592ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:42:30","user_id":0}
+{"ip":"::1","latency":"4.4074ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:42:30","user_id":0}
+{"action":"login","ip":"::1","level":"info","msg":"Audit success","timestamp":"2025-11-04 15:42:35","type":"audit","user_id":1}
+{"ip":"::1","latency":"1.0001212s","level":"info","method":"POST","msg":"HTTP request","path":"/api/login","size":409,"status":200,"timestamp":"2025-11-04 15:42:35","user_id":0}
+{"level":"info","msg":"CSRF token generated and cookie set","timestamp":"2025-11-04 15:42:35","user_id":0}
+{"ip":"::1","latency":"0s","level":"info","method":"GET","msg":"HTTP request","path":"/api/csrf-token","size":61,"status":200,"timestamp":"2025-11-04 15:42:35","user_id":0}
+{"ip":"::1","latency":"8.0401ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:42:36","user_id":0}
+{"ip":"::1","latency":"7.8553ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:42:36","user_id":0}
+{"ip":"::1","latency":"5.7824ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:42:45","user_id":0}
+{"ip":"::1","latency":"4.1251ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:42:45","user_id":0}
+{"ip":"::1","latency":"5.1524ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/admin/users","size":695,"status":200,"timestamp":"2025-11-04 15:43:53","user_id":0}
+{"ip":"::1","latency":"1.2781ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/admin/users","size":695,"status":200,"timestamp":"2025-11-04 15:43:53","user_id":0}

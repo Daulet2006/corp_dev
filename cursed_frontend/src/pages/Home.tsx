@@ -1,9 +1,9 @@
-// src/pages/Home.tsx
+// src/pages/Home.tsx (unchanged, but now / redirects based on role in App.tsx)
 "use client"
 
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
-import { CustomerNav } from "@/components/layout/CustomerNav"
+import { AppNav } from "@/components/AppNav.tsx"  // Unified nav
 import { Button } from "@/components/ui/Button"
 import { Card, CardContent } from "@/components/ui/Card"
 import { Heart, ShoppingBag, Shield, Truck } from "lucide-react"
@@ -49,7 +49,7 @@ export function Home() {
     if (loading) {
         return (
             <div className="min-h-screen bg-background">
-                <CustomerNav />
+                <AppNav />
                 <div className="flex h-[70vh] items-center justify-center">
                     <p className="text-lg text-muted-foreground">{t("common.loading")}</p>
                 </div>
@@ -59,7 +59,7 @@ export function Home() {
 
     return (
         <div className="min-h-screen bg-background">
-            <CustomerNav />
+            <AppNav />
 
             {/* Hero Section */}
             <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-background to-accent/10">

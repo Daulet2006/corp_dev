@@ -1,4 +1,4 @@
-// src/pages/AdminUsers.tsx
+// src/pages/AdminUsers.tsx (modified: unified nav, no sidebar, full-width content, adjusted loading)
 "use client"
 
 import { useState, useEffect } from "react"
@@ -16,7 +16,7 @@ import type { User } from "@/types/types.ts"
 import type { ApiResponse } from "@/types/types.ts"
 import api from "@/utils/api"
 import toast from "react-hot-toast"
-import { AdminNav } from "@/components/layout/AdminNav"
+import { AppNav } from "@/components/AppNav.tsx"  // Unified nav
 import { useAuthStore } from "@/stores/authStore"
 
 const userSchema = z.object({
@@ -148,9 +148,9 @@ export function AdminUsers() {
 
     if (loading) {
         return (
-            <div className="flex h-screen">
-                <AdminNav />
-                <div className="flex flex-1 items-center justify-center">
+            <div className="min-h-screen bg-background">
+                <AppNav />
+                <div className="flex h-[70vh] items-center justify-center">
                     <div className="animate-spin rounded-full border-2 border-primary h-8 w-8" />
                 </div>
             </div>
@@ -158,9 +158,9 @@ export function AdminUsers() {
     }
 
     return (
-        <div className="flex h-screen">
-            <AdminNav />
-            <main className="flex-1 overflow-y-auto bg-background">
+        <div className="min-h-screen bg-background">
+            <AppNav />
+            <main className="overflow-y-auto">
                 <div className="p-8">
                     <h1 className="text-3xl font-bold mb-6">User Management</h1>
 

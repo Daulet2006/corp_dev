@@ -19,7 +19,6 @@ import { AdminDashboard } from "./pages/AdminDashboard"
 import { ManagerDashboard } from "./pages/ManagerDashboard"
 import { ManagerInventory } from "./pages/ManagerInventory.tsx"
 import { AdminUsers } from "./pages/AdminUsers.tsx"
-
 function ProtectedRoute({ children, requiredRole }: { children: React.ReactNode; requiredRole?: string }) {
     const { isLoading, isAuth, user } = useAuthStore()
 
@@ -72,7 +71,6 @@ function HomeWrapper() {
 function App() {
     const { setTheme } = useThemeStore()
     const { setLanguage } = useLanguageStore()
-
     useEffect(() => {
         const initApp = async () => {
             // Theme/lang first

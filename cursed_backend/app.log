@@ -5569,3 +5569,42 @@
 {"ip":"::1","latency":"4.1251ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:42:45","user_id":0}
 {"ip":"::1","latency":"5.1524ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/admin/users","size":695,"status":200,"timestamp":"2025-11-04 15:43:53","user_id":0}
 {"ip":"::1","latency":"1.2781ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/admin/users","size":695,"status":200,"timestamp":"2025-11-04 15:43:53","user_id":0}
+{"ip":"::1","latency":"0s","level":"info","method":"OPTIONS","msg":"HTTP request","path":"/api/admin/users/1","size":0,"status":204,"timestamp":"2025-11-04 15:45:54","user_id":0}
+{"ip":"::1","latency":"0s","level":"warning","method":"PUT","msg":"HTTP request warning","path":"/api/admin/users/1","size":-1,"status":404,"timestamp":"2025-11-04 15:45:54","user_id":0}
+{"ip":"::1","latency":"0s","level":"warning","method":"PUT","msg":"HTTP request warning","path":"/api/admin/users/1","size":-1,"status":404,"timestamp":"2025-11-04 15:45:56","user_id":0}
+{"ip":"::1","latency":"0s","level":"warning","method":"PUT","msg":"HTTP request warning","path":"/api/admin/users/1","size":-1,"status":404,"timestamp":"2025-11-04 15:46:03","user_id":0}
+{"ip":"::1","latency":"0s","level":"warning","method":"PUT","msg":"HTTP request warning","path":"/api/admin/users/1","size":-1,"status":404,"timestamp":"2025-11-04 15:46:09","user_id":0}
+{"ip":"::1","latency":"4.4664ms","level":"info","method":"OPTIONS","msg":"HTTP request","path":"/api/stats","size":0,"status":204,"timestamp":"2025-11-04 15:57:31","user_id":0}
+{"ip":"::1","latency":"4.4664ms","level":"info","method":"OPTIONS","msg":"HTTP request","path":"/api/stats","size":0,"status":204,"timestamp":"2025-11-04 15:57:31","user_id":0}
+{"ip":"::1","latency":"47.6936ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:57:31","user_id":0}
+{"ip":"::1","latency":"5.9811ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 15:57:31","user_id":0}
+{"ip":"::1","latency":"4.5437ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 16:00:08","user_id":0}
+{"ip":"::1","latency":"5.5631ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 16:00:08","user_id":0}
+{"ip":"::1","latency":"5.2895ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 16:00:12","user_id":0}
+{"ip":"::1","latency":"5.4966ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 16:00:12","user_id":0}
+{"ip":"::1","latency":"15.7613ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/admin/users","size":695,"status":200,"timestamp":"2025-11-04 16:00:13","user_id":0}
+{"ip":"::1","latency":"2.5923ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/admin/users","size":695,"status":200,"timestamp":"2025-11-04 16:00:13","user_id":0}
+{"ip":"::1","latency":"508.3µs","level":"info","method":"OPTIONS","msg":"HTTP request","path":"/api/login","size":0,"status":204,"timestamp":"2025-11-04 16:00:17","user_id":0}
+{"action":"login","ip":"::1","level":"info","msg":"Audit success","timestamp":"2025-11-04 16:00:18","type":"audit","user_id":2}
+{"ip":"::1","latency":"1.0769156s","level":"info","method":"POST","msg":"HTTP request","path":"/api/login","size":404,"status":200,"timestamp":"2025-11-04 16:00:18","user_id":0}
+{"ip":"::1","latency":"0s","level":"info","method":"OPTIONS","msg":"HTTP request","path":"/api/csrf-token","size":0,"status":204,"timestamp":"2025-11-04 16:00:18","user_id":0}
+{"level":"info","msg":"CSRF token generated and cookie set","timestamp":"2025-11-04 16:00:18","user_id":0}
+{"ip":"::1","latency":"684.4µs","level":"info","method":"GET","msg":"HTTP request","path":"/api/csrf-token","size":61,"status":200,"timestamp":"2025-11-04 16:00:18","user_id":0}
+{"ip":"::1","latency":"0s","level":"info","method":"OPTIONS","msg":"HTTP request","path":"/api/pets","size":0,"status":204,"timestamp":"2025-11-04 16:00:18","user_id":0}
+{"ip":"::1","latency":"0s","level":"info","method":"OPTIONS","msg":"HTTP request","path":"/api/products","size":0,"status":204,"timestamp":"2025-11-04 16:00:18","user_id":0}
+{"ip":"::1","latency":"0s","level":"info","method":"OPTIONS","msg":"HTTP request","path":"/api/products","size":0,"status":204,"timestamp":"2025-11-04 16:00:18","user_id":0}
+{"ip":"::1","latency":"0s","level":"info","method":"OPTIONS","msg":"HTTP request","path":"/api/pets","size":0,"status":204,"timestamp":"2025-11-04 16:00:18","user_id":0}
+{"ip":"::1","latency":"13.7539ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/pets","size":930,"status":200,"timestamp":"2025-11-04 16:00:18","user_id":0}
+{"ip":"::1","latency":"2.0467ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/products","size":3747,"status":200,"timestamp":"2025-11-04 16:00:18","user_id":0}
+{"ip":"::1","latency":"3.1594ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/pets","size":930,"status":200,"timestamp":"2025-11-04 16:00:19","user_id":0}
+{"ip":"::1","latency":"16.5367ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/products","size":3747,"status":200,"timestamp":"2025-11-04 16:00:19","user_id":0}
+{"action":"login","ip":"::1","level":"info","msg":"Audit success","timestamp":"2025-11-04 16:02:54","type":"audit","user_id":1}
+{"ip":"::1","latency":"1.0763622s","level":"info","method":"POST","msg":"HTTP request","path":"/api/login","size":409,"status":200,"timestamp":"2025-11-04 16:02:54","user_id":0}
+{"level":"info","msg":"CSRF token generated and cookie set","timestamp":"2025-11-04 16:02:54","user_id":0}
+{"ip":"::1","latency":"0s","level":"info","method":"GET","msg":"HTTP request","path":"/api/csrf-token","size":61,"status":200,"timestamp":"2025-11-04 16:02:54","user_id":0}
+{"ip":"::1","latency":"12.2374ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 16:02:54","user_id":0}
+{"ip":"::1","latency":"6.9844ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 16:02:54","user_id":0}
+{"ip":"::1","latency":"2.2415ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/admin/users","size":695,"status":200,"timestamp":"2025-11-04 16:02:58","user_id":0}
+{"ip":"::1","latency":"1.014ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/admin/users","size":695,"status":200,"timestamp":"2025-11-04 16:02:58","user_id":0}
+{"ip":"::1","latency":"6.011ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 16:03:04","user_id":0}
+{"ip":"::1","latency":"6.3184ms","level":"info","method":"GET","msg":"HTTP request","path":"/api/stats","size":135,"status":200,"timestamp":"2025-11-04 16:03:04","user_id":0}

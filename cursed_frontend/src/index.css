@@ -24,14 +24,24 @@
   --card-foreground: #f1f5f9;
 }
 
-* {
-  @apply border-border;
-}
-
 body {
-  @apply bg-background text-foreground font-sans antialiased;
+    @apply bg-background text-foreground font-['Inter'] antialiased;
+    background-blend-mode: multiply; /* Subtle black balance in bg */
 }
 
+/* Typography with role-specific flair */
+h1 {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-['Playfair_Display'] font-bold tracking-tight;
+    font-variation-settings: "wght" 700;
+}
+h2 {
+    @apply text-2xl sm:text-3xl font-['Playfair_Display'] font-semibold;
+    font-variation-settings: "wght" 600;
+}
+h3 {
+    @apply text-xl font-semibold;
+    font-variation-settings: "wght" 600;
+}
 
 
 @layer base {

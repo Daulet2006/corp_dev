@@ -13,12 +13,35 @@ import { useAuthStore } from "@/stores/authStore"
 import { useLanguageStore } from "@/stores/languageStore"
 import api, { fetchCsrfToken } from "@/utils/api"  // Import fetchCsrfToken
 
-const registerSchema = z.object({
-    firstName: z.string().min(1, "First name is required"),
-    lastName: z.string().min(1, "Last name is required"),
-    email: z.string().email("Invalid email address"),
-    password: z.string().min(8, "Password must be at least 8 characters"),
-})
+const registerSchema = z
+    .object({
+        firstName: z
+            .string()
+            .min(2, "First name must be at least 2 characters")
+            .max(50, "First name must be at most 50 characters")
+            .regex(/^[A-Za-zА-Яа-яӘәӨөҰұҚқҒғІіЁёЪъЬь\s-]+$/, "Invalid characters in first name"),
+
+        lastName: z
+            .string()
+            .min(2, "Last name must be at least 2 characters")
+            .max(50, "Last name must be at most 50 characters")
+            .regex(/^[A-Za-zА-Яа-яӘәӨөҰұҚқҒғІіЁёЪъЬь\s-]+$/, "Invalid characters in last name"),
+
+        email: z
+            .string()
+            .email("Invalid email address")
+            .max(100, "Email must be at most 100 characters"),
+
+        password: z
+            .string()
+            .min(8, "Password must be at least 8 characters")
+            .max(64, "Password must be at most 64 characters")
+            .regex(/[A-Z]/, "Password must contain at least one uppercase letter")
+            .regex(/[a-z]/, "Password must contain at least one lowercase letter")
+            .regex(/\d/, "Password must contain at least one number")
+            .regex(/[@$!%*?&]/, "Password must contain at least one special character (@, $, !, %, *, ?, &)"),
+    })
+
 
 type RegisterForm = z.infer<typeof registerSchema>
 

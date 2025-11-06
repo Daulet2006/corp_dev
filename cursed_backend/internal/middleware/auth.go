@@ -8,20 +8,10 @@ import (
 	"net/http"
 	"strings"
 
-	"os"
+	"cursed_backend/internal/security" // Импорт для ParseJWT
 
 	"github.com/gin-gonic/gin"
-	"github.com/golang-jwt/jwt/v5"
 )
-
-var jwtSecret []byte
-
-func init() {
-	jwtSecret = []byte(os.Getenv("JWT_SECRET"))
-	if len(jwtSecret) == 0 {
-		panic("JWT_SECRET is required")
-	}
-}
 
 func JWTAuth() gin.HandlerFunc {
 	return func(c *gin.Context) {
@@ -32,16 +22,13 @@ func JWTAuth() gin.HandlerFunc {
 			return
 		}
 		tokenStr := strings.Replace(authHeader, "Bearer ", "", 1)
-		token, err := jwt.Parse(tokenStr, func(token *jwt.Token) (interface{}, error) {
-			return jwtSecret, nil
-		})
-		if err != nil || !token.Valid {
+		claims, err := security.ParseJWT(tokenStr)
+		if err != nil || claims == nil {
 			logger.Log.WithError(err).Warn("Invalid token attempt")
 			c.JSON(http.StatusUnauthorized, gin.H{"error": "Invalid token"})
 			c.Abort()
 			return
 		}
-		claims := token.Claims.(jwt.MapClaims)
 		userID := uint(claims["user_id"].(float64))
 		role := claims["role"].(string)
 

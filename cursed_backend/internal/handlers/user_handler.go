@@ -2,27 +2,19 @@ package handlers
 
 import (
 	"cursed_backend/internal/db"
+	"cursed_backend/internal/dto"
 	"cursed_backend/internal/logger"
 	"cursed_backend/internal/models"
+	"cursed_backend/internal/security"
 	"net/http"
-	"os"
 	"strconv"
+	"strings"
 	"time"
 
 	"github.com/gin-gonic/gin"
 	"github.com/go-playground/validator/v10"
-	"github.com/golang-jwt/jwt/v5"
 	"golang.org/x/crypto/bcrypt"
 )
-
-var jwtSecret []byte
-
-func init() {
-	jwtSecret = []byte(os.Getenv("JWT_SECRET"))
-	if len(jwtSecret) == 0 {
-		panic("JWT_SECRET is required")
-	}
-}
 
 func GetUsers(c *gin.Context) {
 	if db.GormDB == nil {
@@ -83,20 +75,28 @@ func Register(c *gin.Context) {
 		FirstName string `json:"firstName" validate:"required,min=2,max=50"`
 		LastName  string `json:"lastName" validate:"required,min=2,max=50"`
 		Email     string `json:"email" validate:"required,email"`
-		Password  string `json:"password" validate:"required,min=8,strongpass"`
+		Password  string `json:"password" validate:"required,strongpass"`
 		Role      string `json:"role" validate:"omitempty,oneof=user manager admin"`
 	}
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, models.APIResponse{Success: false, Message: err.Error()})
+		c.JSON(http.StatusBadRequest, models.APIResponse{Success: false, Message: "Invalid JSON: " + err.Error()})
 		return
 	}
+
+	// sanitize inputs (names and email)
+	req.FirstName = security.Sanitizer.Sanitize(strings.TrimSpace(req.FirstName))
+	req.LastName = security.Sanitizer.Sanitize(strings.TrimSpace(req.LastName))
+	req.Email = strings.ToLower(strings.TrimSpace(req.Email)) // canonicalize
+
 	validate := validator.New()
+	security.RegisterCommonValidators(validate)
 	if err := validate.Struct(&req); err != nil {
 		c.JSON(http.StatusBadRequest, models.APIResponse{Success: false, Message: "Validation failed: " + err.Error()})
 		return
 	}
 
-	hashed, err := bcrypt.GenerateFromPassword([]byte(req.Password), 14)
+	// hash password with recommended cost (use 12-14; 14 is expensive)
+	hashed, err := bcrypt.GenerateFromPassword([]byte(req.Password), 12)
 	if err != nil {
 		logger.Log.WithError(err).Error("Password hashing failed")
 		c.JSON(http.StatusInternalServerError, models.APIResponse{Success: false, Message: "Failed to hash password"})
@@ -114,23 +114,30 @@ func Register(c *gin.Context) {
 		user.Role = models.Role(req.Role)
 	}
 
+	// create - handle unique constraint properly
 	if err := db.GormDB.Create(&user).Error; err != nil {
-		logger.Log.WithError(err).Warn("User creation failed - duplicate email")
-		c.JSON(http.StatusConflict, models.APIResponse{Success: false, Message: "User already exists"})
+		logger.Log.WithError(err).Warn("User creation failed - likely duplicate email")
+		c.JSON(http.StatusConflict, models.APIResponse{Success: false, Message: "User already exists or invalid data"})
 		return
 	}
 
-	token, err := generateJWT(&user)
+	// Do NOT return password in response. Use DTO.
+	resp := dto.FromModel(&user)
+
+	// Generate JWT using security package
+	token, err := security.GenerateJWT(&user, 1*time.Hour)
 	if err != nil {
 		logger.Log.WithError(err).Error("Token generation failed")
 		c.JSON(http.StatusInternalServerError, models.APIResponse{Success: false, Message: "Failed to generate token"})
 		return
 	}
+	// set secure cookie — note: requires HTTPS in production
+	c.SetCookie("auth_token", token, 3600*24, "/", "", true, true) // Secure=true, HttpOnly=true
 
 	logger.AuditLog("register", user.ID, c.ClientIP(), nil)
 	c.JSON(http.StatusCreated, models.APIResponse{
 		Success: true,
-		Data:    gin.H{"token": token, "user": user},
+		Data:    gin.H{"user": resp},
 	})
 }
 
@@ -168,7 +175,8 @@ func Login(c *gin.Context) {
 		return
 	}
 
-	token, err := generateJWT(&user)
+	// Generate JWT using security package
+	token, err := security.GenerateJWT(&user, 1*time.Hour)
 	if err != nil {
 		logger.Log.WithError(err).Error("Token generation failed")
 		c.JSON(http.StatusInternalServerError, models.APIResponse{Success: false, Message: "Failed to generate token"})
@@ -184,11 +192,15 @@ func Login(c *gin.Context) {
 
 func UpdateUser(c *gin.Context) {
 	if db.GormDB == nil {
-		c.JSON(http.StatusInternalServerError, models.APIResponse{Success: false, Message: "Database not available"})
+		c.JSON(http.StatusInternalServerError, models.APIResponse{
+			Success: false,
+			Message: "Database not available",
+		})
 		return
 	}
 
 	userID := c.GetUint("user_id")
+
 	var req struct {
 		FirstName string `json:"firstName" validate:"omitempty,min=2,max=50"`
 		LastName  string `json:"lastName" validate:"omitempty,min=2,max=50"`
@@ -196,29 +208,77 @@ func UpdateUser(c *gin.Context) {
 		Image     string `json:"image" validate:"omitempty,url"`
 	}
 	if err := c.ShouldBindJSON(&req); err != nil {
-		c.JSON(http.StatusBadRequest, models.APIResponse{Success: false, Message: err.Error()})
+		c.JSON(http.StatusBadRequest, models.APIResponse{
+			Success: false,
+			Message: "Invalid JSON: " + err.Error(),
+		})
+		return
+	}
+
+	// Sanitize input (assuming you have a security.Sanitizer)
+	req.FirstName = security.Sanitizer.Sanitize(strings.TrimSpace(req.FirstName))
+	req.LastName = security.Sanitizer.Sanitize(strings.TrimSpace(req.LastName))
+	req.Email = strings.ToLower(strings.TrimSpace(req.Email))
+
+	validate := validator.New()
+	security.RegisterCommonValidators(validate)
+	if err := validate.Struct(&req); err != nil {
+		c.JSON(http.StatusBadRequest, models.APIResponse{
+			Success: false,
+			Message: "Validation failed: " + err.Error(),
+		})
 		return
 	}
 
 	var user models.User
 	if err := db.GormDB.First(&user, userID).Error; err != nil {
-		c.JSON(http.StatusNotFound, models.APIResponse{Success: false, Message: "User not found"})
+		c.JSON(http.StatusNotFound, models.APIResponse{
+			Success: false,
+			Message: "User not found",
+		})
 		return
 	}
 
-	updates := map[string]interface{}{
-		"FirstName": req.FirstName,
-		"LastName":  req.LastName,
-		"Email":     req.Email,
-		"Image":     req.Image,
+	// Build only allowed updates
+	updates := map[string]interface{}{}
+	if req.FirstName != "" {
+		updates["first_name"] = req.FirstName
 	}
-	if err := db.GormDB.Model(&user).Updates(updates).Error; err != nil {
+	if req.LastName != "" {
+		updates["last_name"] = req.LastName
+	}
+	if req.Email != "" {
+		updates["email"] = req.Email
+	}
+	if req.Image != "" {
+		updates["image"] = req.Image
+	}
+
+	if len(updates) == 0 {
+		c.JSON(http.StatusBadRequest, models.APIResponse{
+			Success: false,
+			Message: "No fields to update",
+		})
+		return
+	}
+
+	// ✅ Correct way — Select takes a slice of strings directly, not variadic
+	fields := make([]string, 0, len(updates))
+	for k := range updates {
+		fields = append(fields, k)
+	}
+
+	if err := db.GormDB.Model(&user).Select(fields).Updates(updates).Error; err != nil {
 		logger.Log.WithError(err).Error("User update failed")
-		c.JSON(http.StatusInternalServerError, models.APIResponse{Success: false, Message: "Update failed"})
+		c.JSON(http.StatusInternalServerError, models.APIResponse{
+			Success: false,
+			Message: "Update failed",
+		})
 		return
 	}
 
-	c.JSON(http.StatusOK, models.APIResponse{Success: true, Data: user})
+	resp := dto.FromModel(&user)
+	c.JSON(http.StatusOK, models.APIResponse{Success: true, Data: resp})
 }
 
 func BlockUser(c *gin.Context) {
@@ -324,26 +384,13 @@ func ChangeRole(c *gin.Context) {
 func RefreshToken(c *gin.Context) {
 	userID := c.GetUint("user_id")
 	role := c.GetString("role")
-	token, err := generateJWTWithClaims(userID, role, 15*time.Minute) // Short for refresh
+	token, err := security.GenerateJWTWithClaims(userID, role, 15*time.Minute) // Short for refresh
 	if err != nil {
 		logger.Log.WithError(err).Error("Refresh token failed")
 		c.JSON(http.StatusInternalServerError, models.APIResponse{Success: false, Message: "Refresh failed"})
 		return
 	}
 	c.JSON(http.StatusOK, models.APIResponse{Success: true, Data: gin.H{"token": token}})
-}
-
-func generateJWT(user *models.User) (string, error) {
-	return generateJWTWithClaims(user.ID, user.Role.String(), 24*time.Hour)
-}
-
-func generateJWTWithClaims(userID uint, role string, exp time.Duration) (string, error) {
-	token := jwt.NewWithClaims(jwt.SigningMethodHS256, jwt.MapClaims{
-		"user_id": userID,
-		"role":    role,
-		"exp":     time.Now().Add(exp).Unix(),
-	})
-	return token.SignedString(jwtSecret)
 }
 
 func HealthCheck(c *gin.Context) {

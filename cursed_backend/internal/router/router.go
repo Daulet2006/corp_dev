@@ -84,6 +84,8 @@ func SetupRouter(cfg *config.Config) *gin.Engine {
 		protected.GET("/my/products", handlers.MyProducts)
 		protected.POST("/pets/:id/buy", handlers.BuyPet)
 		protected.POST("/products/:id/buy", handlers.BuyProduct)
+		protected.DELETE("/pets/:id", handlers.DeletePet)
+		protected.DELETE("/products/:id", handlers.DeleteProduct)
 	}
 
 	// Manager routes
@@ -92,11 +94,9 @@ func SetupRouter(cfg *config.Config) *gin.Engine {
 		manager.POST("/pets", handlers.CreatePet)
 		manager.GET("/pets/:id", handlers.GetPet)
 		manager.PUT("/pets/:id", handlers.UpdatePet)
-		manager.DELETE("/pets/:id", handlers.DeletePet)
 		manager.POST("/products", handlers.CreateProduct)
 		manager.GET("/products/:id", handlers.GetProduct)
 		manager.PUT("/products/:id", handlers.UpdateProduct)
-		manager.DELETE("/products/:id", handlers.DeleteProduct)
 	}
 
 	// Admin routes
@@ -134,7 +134,7 @@ func globalRateLimit(cfg *config.Config) gin.HandlerFunc {
 		ip := c.ClientIP()
 		if _, ok := rateLimiters[ip]; !ok {
 			// Dev: Higher limit; Prod: Strict
-			burst := 5
+			burst := 80
 			if cfg.Env == "dev" {
 				burst = 100
 			}

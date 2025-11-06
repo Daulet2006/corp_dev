@@ -44,18 +44,17 @@ export function MyProducts() {
     }
 
     const handleDelete = async (productId: number) => {
-        if (!confirm("Are you sure you want to delete this product?")) return
-
+        const deleteToast = toast.loading(t("common.deleting") || "Deleting...", { id: "delete-product" })
         try {
             const response = await api.delete(`/products/${productId}`)
             if (response.data.success) {
-                toast.success("Product deleted successfully")
+                toast.success("Product deleted successfully", { id: deleteToast })
                 fetchMyProducts()
             } else {
                 throw new Error(response.data.message)
             }
         } catch (error: any) {
-            toast.error(error.response?.data?.message || "Delete failed")
+            toast.error(error.response?.data?.message || "Delete failed", { id: deleteToast })
         }
     }
 

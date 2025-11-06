@@ -6,14 +6,15 @@ require (
 	github.com/gin-contrib/cors v1.7.6
 	github.com/gin-gonic/gin v1.11.0
 	github.com/golang-jwt/jwt/v5 v5.3.0
-	github.com/gorilla/csrf v1.7.2
 	github.com/joho/godotenv v1.5.1
+	github.com/microcosm-cc/bluemonday v1.0.27
 	github.com/prometheus/client_golang v1.19.1
 	github.com/sirupsen/logrus v1.9.3
 	golang.org/x/crypto v0.43.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
 	gorm.io/driver/postgres v1.6.0
 	gorm.io/gorm v1.31.0
+
 )
 
 require (
@@ -23,9 +24,9 @@ require (
 
 require (
 	github.com/aymerick/douceur v0.2.0 // indirect
+	github.com/gorilla/csrf v1.7.3 // indirect
 	github.com/gorilla/css v1.0.1 // indirect
 	github.com/gorilla/securecookie v1.1.2 // indirect
-	github.com/microcosm-cc/bluemonday v1.0.27 // indirect
 )
 
 replace github.com/gorilla/csrf => github.com/gorilla/csrf v1.7.2

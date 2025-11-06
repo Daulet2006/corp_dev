@@ -38,14 +38,13 @@ export function MyPets() {
     }
 
     const handleDelete = async (petId: number) => {
-        if (!confirm("Are you sure you want to delete this pet?")) return
-
+        const deleteToast = toast.loading(t("common.deleting") || "Deleting...", { id: "delete-pet" })
         try {
             await api.delete(`/pets/${petId}`)
-            toast.success("Pet deleted successfully")
+            toast.success("Pet deleted successfully", { id: deleteToast })
             fetchMyPets()
         } catch (error: any) {
-            toast.error(error.response?.data?.error || "Delete failed")
+            toast.error(error.response?.data?.error || "Delete failed", { id: deleteToast })
         }
     }
 

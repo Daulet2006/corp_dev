@@ -39,7 +39,6 @@ func InitLogger(levelStr string) {
 	Log.WithFields(logrus.Fields{"level": levelStr}).Info("Logger initialized")
 }
 
-// AuditLog для событий безопасности
 func AuditLog(action string, userID uint, ip string, err error) {
 	fields := logrus.Fields{
 		"action":  action,

@@ -21,7 +21,6 @@ func CSRF() gin.HandlerFunc {
 			return
 		}
 
-		// Get token from header
 		clientToken := c.GetHeader("X-CSRF-Token")
 		if clientToken == "" {
 			writeCSRFError(c, "CSRF token missing")

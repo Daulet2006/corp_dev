@@ -7,6 +7,7 @@ import (
 	"cursed_backend/internal/logger"
 	"cursed_backend/internal/metrics"
 	"cursed_backend/internal/router"
+	"cursed_backend/internal/security"
 	"errors"
 	"log"
 	"net/http"
@@ -21,7 +22,7 @@ import (
 
 func main() {
 	// Load .env
-	if err := godotenv.Load("../../.env"); err != nil {
+	if err := godotenv.Load(".env"); err != nil {
 		log.Println("⚠️  .env not found, using defaults")
 	}
 	log.Println("✅ .env loaded")
@@ -37,7 +38,7 @@ func main() {
 	if cfg.Env == "prod" && cfg.CSRFKey == "" {
 		log.Fatal("❌ CSRF_KEY required in prod")
 	}
-
+	security.InitJWTSecret(cfg.JWTSecret)
 	// Init DB
 	db.InitDB(cfg)
 	if db.GormDB == nil {

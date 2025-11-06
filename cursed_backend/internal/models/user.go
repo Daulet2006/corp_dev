@@ -26,5 +26,3 @@ func (u *User) BeforeCreate(*gorm.DB) error {
 	}
 	return nil
 }
-
-// ValidateUser убрана, так как не используется (валидация в хендлерах через tags)

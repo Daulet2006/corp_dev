@@ -1,0 +1,39 @@
+# prometheus-rules.yml
+groups:
+  - name: cursed_backend_alerts
+    rules:
+      - alert: HighErrorRate
+        expr: rate(http_errors_total[5m]) > 0.05  # >5% errors
+        for: 2m
+        labels:
+          severity: critical
+        annotations:
+          summary: "High error rate in backend"
+          description: "Error rate is {{ $value }} for last 5m"
+
+      - alert: SlowRequests
+        expr: histogram_quantile(0.95, rate(http_request_duration_seconds_bucket[5m])) > 2  # 95% >2s
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Slow HTTP requests detected"
+          description: "95th percentile latency is {{ $value }}s"
+
+      - alert: SlowDBQueries
+        expr: histogram_quantile(0.95, rate(db_query_duration_seconds_bucket[5m])) > 1  # 95% DB >1s
+        for: 1m
+        labels:
+          severity: warning
+        annotations:
+          summary: "Slow DB queries"
+          description: "95th percentile DB query time is {{ $value }}s for table {{ $labels.table }}"
+
+      - alert: HighRequestVolume
+        expr: rate(http_requests_total[5m]) > 100  # >100 req/s, adjust for your load
+        for: 5m
+        labels:
+          severity: info
+        annotations:
+          summary: "High traffic volume"
+          description: "Request rate is {{ $value }} req/s"
